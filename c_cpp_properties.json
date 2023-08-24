@@ -1,0 +1,9 @@
+{
+  "includePath": [
+    "${workspaceFolder}/**",
+    "${workspaceFolder}/nexusdb-lib/include/**",
+    "/usr/include/**",
+    "/usr/local/include/**",
+    "${localAppData}/node-gyp/Cache/16.17.0/**"
+  ]
+}

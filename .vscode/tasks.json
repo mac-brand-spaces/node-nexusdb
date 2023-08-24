@@ -1,0 +1,10 @@
+{
+  "tasks": [
+    {
+      "label": "build node",
+      "group": "build",
+      "command": "npx node-gyp build",
+      "type": "shell",
+    }
+  ]
+}
