@@ -1,0 +1,36 @@
+{
+  "name": "@mac-brand-spaces/node-nexusdb",
+  "version": "1.0.0",
+  "description": "Node.js driver for NexusDB",
+  "main": "./src/index.js",
+  "types": "./types/types.d.ts",
+  "files": [
+    "src",
+    "types",
+    "bin"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "make",
+    "prepublishOnly": "npm run configure && npm run build"
+  },
+  "devDependencies": {
+    "node-gyp": "9.4.0"
+  },
+  "repository": "https://github.com/mac-brand-spaces/node-nexusdb",
+  "author": {
+    "name": "Marius Kehl",
+    "email": "marius.kehl@mac.de",
+    "url": "https://github.com/MeroFuruya"
+  },
+  "cpu": [
+    "x64",
+    "ia32"
+  ],
+  "bugs": {
+    "url": "https://github.com/mac-brand-spaces/node-nexusdb/issues",
+    "email": "dev@mac.de"
+  },
+  "displayName": "node-nexusdb",
+  "readme": "readme.md"
+}
