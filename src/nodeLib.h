@@ -26,6 +26,15 @@ void node_AddRemoteDatabase(const v8::FunctionCallbackInfo<v8::Value> &args);
 void node_AddDatabase(const v8::FunctionCallbackInfo<v8::Value> &args);
 
 /**
+ * Executes a query
+ * @param string DatabaseId
+ * @param string query
+ * @param string params
+ * @returns `string || undefined` result or undefined if failed
+ */
+void node_Execute(const v8::FunctionCallbackInfo<v8::Value> &args);
+
+/**
  * Close a connection to a database
  * @param string DatabaseId
  * @returns boolean success
