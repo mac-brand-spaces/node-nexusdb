@@ -12,10 +12,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "make",
-    "prepublishOnly": "npm run configure && npm run build"
+    "prepublishOnly": "npm run configure && npm run build",
+    "prettier": "prettier --write \"src/**/*.js\" \"test/**/*.js\" \"*.js\"",
+    "eslint": "eslint --fix \"src/**/*.js\" \"test/**/*.js\" \"*.js\""
   },
   "devDependencies": {
-    "node-gyp": "9.4.0"
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "node-gyp": "^9.4.0",
+    "prettier": "^3.0.2"
   },
   "repository": "https://github.com/mac-brand-spaces/node-nexusdb",
   "author": {
