@@ -3,7 +3,7 @@
     {
       "label": "build node",
       "group": "build",
-      "command": "npx node-gyp build",
+      "command": "npx node-gyp build -d",
       "type": "shell",
     }
   ]
