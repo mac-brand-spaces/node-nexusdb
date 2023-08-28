@@ -1,11 +1,17 @@
-const nexusDb = require("./../build/Release/nexusdb.node");
+const nexusdb = require("./../src/nexusdb");
 
-console.log(nexusDb);
-nexusDb.loadDll(__dirname + "/../nexusdb-lib/Win64/Debug/Project1.dll");
+nexusdb.loadDll(__dirname + "/../nexusdb-lib/Win64/Debug/Project1.dll");
 
-const db_id = nexusDb.addRemoteDatabase()
-console.log(db_id);
+const db_local = nexusdb.NexusLocalDatabase("C:\\Users\\KEHL\\Desktop\\c")
+// db_local.execute("CREATE TABLE users (id INTEGER, name VARCHAR(255))")
+db_local.execute("INSERT INTO users (id, name) VALUES (1, 'Kehl')")
+const res2 = db_local.execute("SELECT * FROM users")
+console.log(res2);
+db_local.close();
 
-nexusDb.closeDatabase(db_id);
+const db_remote = nexusdb.NexusRemoteDatabase("127.0.0.1", "Docuware", "KEHL", "eisenbahn05")
+const res = db_remote.execute("SELECT * FROM RESULTOBJEKT")
+console.log(res);
+db_remote.close();
 
-nexusDb.unloadDll();
+nexusdb.unloadDll();
