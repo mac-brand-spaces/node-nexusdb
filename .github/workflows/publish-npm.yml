@@ -1,0 +1,30 @@
+name: Publish Package to npmjs
+on:
+  release:
+    types: [published]
+
+permissions:
+  packages: write
+
+jobs:
+  build:
+    name: Publish Package to npmjs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      # Setup .npmrc file to publish to npm
+      - name: Setup .npmrc
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16.x"
+          # use github packages registry
+          registry-url: "https://npm.pkg.github.com"
+      - name: Install dependencies
+        run: npm ci
+      - name: Build with node-gyp
+        run: npm run build:nodeGyp
+      - name: Publish to npmjs
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

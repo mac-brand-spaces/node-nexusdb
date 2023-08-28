@@ -8,9 +8,9 @@ NODE_GYP := node-gyp
 # Targets
 .PHONY: all clean rebuild
 
-all: $(BIN_DIR)/nexusdb.node
+all: build build_dll
 
-$(BIN_DIR)/nexusdb.node: $(NXDB_LIB_DIR)/nexusdb.dll | $(BIN_DIR)
+build: $(BIN_DIR)
 	$(NODE_GYP) configure --arch=x64
 	$(NODE_GYP) build --arch=x64
 	cp build/Release/nexusdb.node $(BIN_DIR)/nexusdb-x64.node
@@ -18,7 +18,7 @@ $(BIN_DIR)/nexusdb.node: $(NXDB_LIB_DIR)/nexusdb.dll | $(BIN_DIR)
 	$(NODE_GYP) build --arch=ia32
 	cp build/Release/nexusdb.node $(BIN_DIR)/nexusdb-x32.node
 
-$(NXDB_LIB_DIR)/nexusdb.dll:
+build_dll: $(BIN_DIR)
 	@if [ ! -d "$(NXDB_LIB_DIR)" ]; then \
 		echo "Error: $(NXDB_LIB_DIR) not found. Did you fetch the submodule?"; \
 		exit 1; \

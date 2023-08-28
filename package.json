@@ -11,6 +11,8 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build:nodeGyp": "make build",
+    "build:dlls": "make build_dll",
     "build": "make",
     "prepublishOnly": "npm run configure && npm run build",
     "prettier": "prettier --write \"src/**/*.js\" \"test/**/*.js\" \"*.js\"",
