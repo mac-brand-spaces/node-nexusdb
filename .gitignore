@@ -132,5 +132,3 @@ dist
 build/
 
 include/node/
-
-bin/*.node

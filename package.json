@@ -14,7 +14,6 @@
     "build:nodeGyp": "make build",
     "build:dlls": "make build_dll",
     "build": "make",
-    "prepublishOnly": "npm run configure && npm run build",
     "prettier": "prettier --write \"src/**/*.js\" \"test/**/*.js\" \"*.js\"",
     "eslint": "eslint --fix \"src/**/*.js\" \"test/**/*.js\" \"*.js\""
   },
