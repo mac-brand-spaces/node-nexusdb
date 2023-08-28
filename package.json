@@ -1,5 +1,5 @@
 {
-  "name": "@mac-brand-spaces/node-nexusdb",
+  "name": "@mac-brand-spaces/nexusdb",
   "version": "1.0.0",
   "description": "Node.js driver for NexusDB",
   "main": "./src/index.js",
@@ -37,5 +37,10 @@
     "email": "dev@mac.de"
   },
   "displayName": "node-nexusdb",
-  "readme": "readme.md"
+  "readme": "readme.md",
+  "keywords": [
+    "nexusdb",
+    "database",
+    "driver"
+  ]
 }
